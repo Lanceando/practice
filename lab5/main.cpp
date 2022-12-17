@@ -54,13 +54,13 @@ class Dyn_mas
 			}
 			delete mass;
 			size--;
-			mass = newMass; // возращаем привучную переменную 
+			mass = newMass; // возращаем привычную переменную 
 		}
 
 		//6
 		void insertByInd(int ind, int num)
 		{
-			int* newMass = new int[size + 1]; // добавляем эл. добавляем место
+			int* newMass = new int[size + 1]; // добавляем доп место для эл.
 			bool flag = false;
 			for (int i = 0; i < size + 1; i++)
 			{
@@ -86,11 +86,11 @@ int main()
 	massive.add_el(2);
 	massive.add_el(-5);
 
-	massive.CurrElements();
+	/*massive.CurrElements();
 	massive.elementByInd(2);
 	massive.changeByInd(3, 60);
 	massive.delByInde(4);
 	massive.insertByInd(4, 64);
-	massive.elementByInd(4);
+	massive.elementByInd(4);*/
 }
 
