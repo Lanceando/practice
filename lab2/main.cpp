@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <cstring>
 
@@ -38,21 +38,31 @@ int main()
     std::cin >> a;
     std::cin >> b;
 
-    if (a.size() < b.size())
+    if (a == "0" || b == "0")
     {
-        std::string temp = a;
-        a = b;
-        b = temp;
+        std::cout << "Сумма: " << sum(a, b) << std::endl;
+        std::cout << "Произведение: " << 0 << std::endl;
+        
     }
-    std::cout << "Сумма: " << sum(a, b) << std::endl;
+    else
+    {
+        if (a.size() < b.size())
+        {
+            std::string temp = a;
+            a = b;
+            b = temp;
+        }
+        std::cout << "Сумма: " << sum(a, b) << std::endl;
 
-    std::string a2 = a;
-    std::string c = "1";
-    
-    while (c != b) // число а прибавляется самому себе до тех пор, пока "счётчик" c не дойдёт до числа b(кол-во раз, сколько над умножить).
-    {
-        a2 = sum(a2, a);
-        c = sum(c, "1");
+        std::string a2 = a;
+        std::string c = "1";
+
+        while (c != b)
+        {
+            a2 = sum(a2, a);
+            c = sum(c, "1");
+        }
+        std::cout << "Произведение: " << a2 << std::endl;
     }
-    std::cout << "Произведение: " << a2 << std::endl;
+
 }
