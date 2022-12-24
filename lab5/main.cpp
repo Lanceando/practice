@@ -42,15 +42,15 @@ class Dyn_mas
 		void delByInde(int ind)
 		{
 			int* newMass = new int[size - 1]; // создаём уменьшенный массив
-			bool flag = false;
+			bool flag = 0;
 			for (int i = 0; i < size; i++)
 			{
 				if (i == ind) // чекаем индекс
 				{
-					flag == true;
+					flag == 1;
 					continue;
 				}
-				newMass[i - 1] = mass[i]; // записываем новый массив без удалённого элемента
+				newMass[i - flag] = mass[i]; // записываем новый массив без удалённого элемента
 			}
 			delete mass;
 			size--;
@@ -61,16 +61,16 @@ class Dyn_mas
 		void insertByInd(int ind, int num)
 		{
 			int* newMass = new int[size + 1]; // добавляем доп место для эл.
-			bool flag = false;
+			bool flag = 0;
 			for (int i = 0; i < size + 1; i++)
 			{
 				if (i == ind)
 				{
-					flag = true;
+					flag = 1;
 					newMass[i] == num;	  //добавли элемент по индексу
 					continue;
 				}
-				newMass[i] = mass[i - 1];
+				newMass[i] = mass[i - flag];
 			}
 			delete mass;
 			size++;
